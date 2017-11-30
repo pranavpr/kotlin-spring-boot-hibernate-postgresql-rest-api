@@ -15,11 +15,9 @@ class ArticleController(private val articleService: ArticleService) {
     fun getAllArticles(): List<Article> =
             articleService.getAllArticles()
 
-
     @PostMapping("/articles")
     fun createNewArticle(@Valid @RequestBody article: Article): Article =
             articleService.createNewArticle(article)
-
 
     @GetMapping("/articles/{id}")
     fun getArticleById(@PathVariable(value = "id") articleId: Long): ResponseEntity<Article> {
@@ -35,6 +33,7 @@ class ArticleController(private val articleService: ArticleService) {
             ResponseEntity.ok().body(articleService.updateArticle(article, newArticle))
         }.orElse(ResponseEntity.notFound().build())
     }
+
 
     @DeleteMapping("/articles/{id}")
     fun deleteArticleById(@PathVariable(value = "id") articleId: Long): ResponseEntity<Void> {

@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.1.60'
+		kotlinVersion = '1.2.0'
 		springBootVersion = '2.0.0.M6'
 	}
 	repositories {
@@ -42,6 +42,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.0.M6'
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

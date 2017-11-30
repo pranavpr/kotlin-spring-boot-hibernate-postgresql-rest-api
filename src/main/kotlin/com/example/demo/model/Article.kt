@@ -1,6 +1,7 @@
 package com.example.demo.model
 
 import org.hibernate.validator.constraints.NotBlank
+import java.io.Serializable
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -16,4 +17,4 @@ data class Article (
 
         @get: NotBlank
         val content: String = ""
-)
+) : Serializable
